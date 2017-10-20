@@ -293,7 +293,7 @@
     // a response from the server.  you can construct an if() around this
     // if you're feeling worried.
     this.resultValue; 
-    // resultValue:
+    // resultString:
     // the 'transcript' of the most recently recognized speech as a simple
     // string.  this will be blown out and replaced at every firing of the
     // onresult() callback.
