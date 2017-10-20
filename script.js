@@ -1,5 +1,6 @@
 var myRec= new p5.SpeechRec('en-US',parseResult);
-
+myRec.continuous = true;
+myRec.interimResults = true;
 
 var x,y
 var dx,dy
@@ -27,6 +28,7 @@ function setup(){
 }
 
 function draw(){
+    // myRec.start()
     push()
     fill("RED")
     ellipse(x,y,5,5)
