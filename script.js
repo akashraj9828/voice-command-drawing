@@ -12,14 +12,14 @@ var dx, dy
 var speed
 
 function setup() {
-    createCanvas(windowWidth, windowHeight)
+    createCanvas(windowWidth-20, windowHeight-20)
     background(2)
     x = width / 2
     y = height / 2
     dx = 0
     dy = 0
     i = 0
-    speed=1
+    speed=3
     myRec.start()
 }
 
@@ -54,11 +54,14 @@ function draw() {
     ya[i] = y
     i++
     push()
-    fill("RED")
-    for (index = 0; index < xa.length; index++) {
-        ellipse(xa[index], ya[index], 10, 10)
+    stroke(255,0,0,40)
+    strokeWeight(10)
+    // beginShape()
+    for (index = xa.length-1000; index < xa.length; index++) {
+        point(xa[index], ya[index])
     }
-
+    // endShape()
+pop()
     texts()
     if (x < 0) x = width
     if (x > width) x = 0
@@ -96,8 +99,10 @@ function parseResult() {
                     // console.log(dy)
                 } else
                     if (most_recent_word.indexOf("clear") !== -1) {
-                        xa = []
-                        ya = []
+                        xa.length=0
+                        ya.length=0
+                        console.log(xa)
+                        console.log(ya)
                     } else
                         if (most_recent_word.indexOf("stop") !== -1) {
                             noLoop()
@@ -108,15 +113,19 @@ function parseResult() {
 
                                 if (most_recent_word.indexOf("fast") !== -1) {
                                     speed*=1.3
-                                    dx*=speed
-                                    dy*=speed
+                                    if(dy==0)
+                                   dx=(dx/abs(dx))*speed
+                                   if(dx==0)
+                                   dy=(dy/abs(dy))*speed
                                     // console.log(speed)
                                 } else
 
                                     if (most_recent_word.indexOf("slow") !== -1) {
                                         speed*=0.7
-                                        dx*=speed
-                                        dy*=speed
+                                        if(dy==0)
+                                        dx=(dx/abs(dx))*speed
+                                        if(dx==0)
+                                        dy=(dy/abs(dy))*speed
                                         // console.log(speed)
                                     }
 
