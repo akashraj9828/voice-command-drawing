@@ -1,7 +1,6 @@
 # `Voice Command Drawing`
 ##### This is a simple web based sketch-pad that moves the paint-brush using voice recognition.
-#
-#
+
 ## `Commands available:`
 * left
 * right
@@ -13,9 +12,7 @@
 * slow
 
 ##### Currently voice recognition api is is only available in chrome browser as per my knowledge .
-#
-#
-#
+
 ## Here is how to access the speech recognition api in browser
 **internet access required for speech recognition
 ```js
@@ -43,3 +40,6 @@ recognition.onresult = function() {            //function to trigger when speech
 }
 recognition.start();                              //starts speech recognition engine
 ```
+
+
+
